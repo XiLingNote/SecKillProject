@@ -6,29 +6,35 @@
 <!-- 为Dao接口提供sql配置语句 -->
 	<update id="reduceNumber">
 	<!--sql语句  -->
-	update 
+	update
 		seckill
 	set 
-	sec_number =sec_number-1;
-	where seckill_id = #{seckillId}
-	and start_time <![CDATA[<=]]> #{killTime}
-	and end_time>=#{killTime}
-	and sec_number>0;
+	SEC_NUMBER =SEC_NUMBER-1
+	where SECKILL_ID = #{seckillId}
+	and START_TIME  &lt; #{killTime}
+	and END_TIME &gt;=#{killTime}
+	and SEC_NUMBER>0
 	</update>
-	<select id="queryById" resultType="Seckill" parameterType="long">
-	select seckill_id ,sec_name,sec_number,start_time,end_time,create_time
+	<select id="queryById" resultType="org.seckill.entity.Seckill" parameterType="int">
+	select *
 	from seckill
-	where seckill_id=#{seckillId};
+	where seckill_id=#{seckillId}
 	</select>
-	
-	<select id ="queryAll" resultType="Seckill">
-	select seckill_id ,sec_name,sec_number,start_time,end_time,create_time
-	from seckill
-	where rownum>#{offset}
-	and rownum<![CDATA[<=]]>#{limit}
-	order by create_time desc;
-	
-	</select>
-	
 
+	<select id="queryId" resultType="org.seckill.entity.Seckill" parameterType="String">
+		select   * from seckill
+		where  id= #{id}
+	</select>
+	<resultMap id="seckillMap" type="org.seckill.entity.Seckill">
+		<id property="SECKILL_ID" column="SECKILL_ID"/>
+		<result property="SEC_NAME" column="SEC_NAME"/>
+		<result property="START_TIME" column="START_TIME"/>
+		<result property="END_TIME" column="END_TIME"/>
+		<result property="CREATE_TIME" column="CREATE_TIME"/>
+	</resultMap>
+	<select id ="queryAll" resultMap="seckillMap">
+		select s.* from seckill s
+		where ROWNUM >#{offset}
+		and ROWNUM &lt;= #{limit}
+</select>
 </mapper>

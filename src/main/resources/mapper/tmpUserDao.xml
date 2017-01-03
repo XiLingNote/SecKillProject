@@ -1,0 +1,12 @@
+
+    <!DOCTYPE mapper PUBLIC   
+        "-//mybatis.org//DTD Mapper 3.0//EN"  
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    <mapper namespace="org.seckill.dao.tmpUserDao">
+    <resultMap id="tmpUser" type="org.seckill.entity.tmpUser">
+        <result column="name"  property="name"/>
+    </resultMap>
+        <select id="query" parameterType="int" resultMap="tmpUser">
+            select name from tmpUser where id = #{id}
+       </select>  
+    </mapper>  

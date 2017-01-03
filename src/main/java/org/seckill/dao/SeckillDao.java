@@ -1,5 +1,6 @@
 package org.seckill.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.Seckill;
 
 import java.util.Date;
@@ -8,8 +9,9 @@ import java.util.List;
 
 public interface SeckillDao {
 
-int reduceNumber(int seckillId, Date killTime);
+int reduceNumber(@Param("seckillId") int seckillId, @Param("killTime") Date killTime);
 
-Seckill queryById(int seckillId);
-List<Seckill> queryAll(int offet, int limit);
+Seckill queryById(@Param("seckillId") int seckillId);
+List<Seckill> queryAll(@Param("offset")int offset, @Param("limit") int limit);
+    Seckill queryId(String id);
 }

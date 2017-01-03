@@ -6,13 +6,14 @@
   <!-- 配置全局变量 -->
   <settings>
   <!--主键自增张  -->
-  <setting name='useGeneratedKeys' value='true'/>
+  <setting name='useGeneratedKeys' value='false'/>
       <!-- 使用列名别名替换列名 -->
   
-  <setting name="useColumnLabel" value="true"/>
+
   
   <!--驼峰转换开启  -->
-  <setting name="mapUnderscoreToCamelCase" value="true"/>
-  </settings>
- 
+
+</settings>
+
+
   </configuration>

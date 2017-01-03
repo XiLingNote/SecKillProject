@@ -1,7 +1,8 @@
 
 package org.seckill.dao;
 
-import org.seckill.entity.SeccessKilled;
+import org.apache.ibatis.annotations.Param;
+import org.seckill.entity.SuccessKilled;
 
 /**
  * @author shou
@@ -9,7 +10,7 @@ import org.seckill.entity.SeccessKilled;
  */
 public interface SuccessKilledDao {
 
-	int insertSuccessKilled(int seckillid, int userphone);
-	SeccessKilled queryByIdWithSeckill(int seckillId);
+	int insertSuccessKilled(@Param("seckillId") int seckillId, @Param("userPhone") int userPhone);
+	SuccessKilled queryByIdWithSeckill(@Param("seckillId") int seckillId);
 	
 }
