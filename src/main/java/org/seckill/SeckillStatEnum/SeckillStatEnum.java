@@ -4,6 +4,8 @@ package org.seckill.SeckillStatEnum;
  * Created by shou on 2016/12/28.
  */
 public enum SeckillStatEnum {
+    REGIST(3,"未注册"),
+    FALSE(2,"重复秒杀"),
    SUCCESS(1,"秒杀成功") ,
    END(0,"秒杀结束") ,
     REPEAT_KIll(-1,"秒杀结束"),

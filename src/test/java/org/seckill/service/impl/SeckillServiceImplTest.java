@@ -8,7 +8,6 @@ import org.seckill.dto.seckillExcution;
 import org.seckill.entity.Seckill;
 import org.seckill.exception.RepeatKillExcetion;
 import org.seckill.exception.SeckillCloseException;
-import org.seckill.exception.SeckillException;
 import org.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,14 +17,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by shou on 2016/12/29.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({
-        "classpath:spring/springDao.xml",
+        "classpath:spring/spring-dao.xml",
         "classpath:spring/spring-service.xml"
 })
 public class SeckillServiceImplTest {

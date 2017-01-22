@@ -11,6 +11,6 @@ import org.seckill.entity.SuccessKilled;
 public interface SuccessKilledDao {
 
 	int insertSuccessKilled(@Param("seckillId") int seckillId, @Param("userPhone") int userPhone);
-	SuccessKilled queryByIdWithSeckill(@Param("seckillId") int seckillId);
+	SuccessKilled queryByIdWithSeckill(@Param("seckillId") int seckillId,@Param("userPhone") int userPhone);
 	
 }

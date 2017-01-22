@@ -1,8 +1,6 @@
 package org.seckill.dao;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.seckill.entity.Seckill;
@@ -15,8 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by shou on 2016/12/17
  * 配置spring和junit整合junit 启动时加载spring.
@@ -24,7 +20,7 @@ import static org.junit.Assert.*;
 //加载spring的容器
 @RunWith(SpringJUnit4ClassRunner.class)
 //告诉junit 的配置文件位置
-@ContextConfiguration({"classpath:spring/springDao.xml","classpath:mybatis-config.xml"})
+@ContextConfiguration({"classpath:spring/spring-dao.xml","classpath:mybatis-config.xml"})
 public class SeckillDaoTest {
 
     //注入依赖
